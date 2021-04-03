@@ -1,5 +1,7 @@
 # Implementation-of-svg
 
-![](https://github.com/Yule1988/Implementation-of-svg/blob/main/demo.svg | width=100)
 
-![](demo.svg)
+# demo
+![](img/demo.svg)
+# getting started
+![](img/record_gettingStart5.svg)
