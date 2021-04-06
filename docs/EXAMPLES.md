@@ -1,3 +1,6 @@
+layout: page
+title: "EXAMPLES"
+permalink: https://yule1988.github.io/Implementation-of-svg/EXAMPLES/
 
 ### **write, verify, hash and read data:**
 <!-- > write, verify, read and hash data -->
