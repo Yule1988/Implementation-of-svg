@@ -1,0 +1,10 @@
+- title: "Home"
+  href: "/"
+- title: "About"
+  href: "/about/"
+- title: "Projects"
+  subcategories:
+    - subtitle: "Project1"
+      subhref: "#"
+    - subtitle: "Project2"
+      subhref: "#"
