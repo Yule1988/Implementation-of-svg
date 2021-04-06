@@ -11,7 +11,7 @@
 <img src="img/getting_started_Dark+lighter_100x30.svg" width="100%">
 </p>
 
-### [Documentation](DOCS.md)
+### [Further Examples](EXAMPLES.md)
 
 
 
