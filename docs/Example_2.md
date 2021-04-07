@@ -1,9 +1,10 @@
 ---
 layout: default
-title: write, verify, hash and read data
+title: Write, Verify, Hash and Read Data
 parent: Examples
 has_children: true
 nav_order: 2
+has_toc: false
 ---
 <!-- ### **write, verify, hash and read data:** -->
 <!-- > write, verify, read and hash data -->

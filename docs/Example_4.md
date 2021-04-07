@@ -4,6 +4,7 @@ title: Input Command
 parent: Examples
 has_children: true
 nav_order: 4
+has_toc: false
 ---
 <!-- ### **input command:** -->
 <p align="center"> 

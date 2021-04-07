@@ -1,9 +1,10 @@
 ---
 layout: default
-title: erase and iserase
+title: Erase and Iserase
 parent: Examples
 has_children: true
 nav_order: 3
+has_toc: false
 ---
 <!-- ### **erase and iserase:** -->
 <p align="center"> 

@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Example Getting Started
+title: Getting Started
 parent: Examples
 has_children: true
 nav_order: 1
+has_toc: false
 ---
 <!-- # Example getting started
 {: .no_toc } -->
