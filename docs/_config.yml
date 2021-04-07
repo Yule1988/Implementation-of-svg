@@ -31,7 +31,9 @@ github_username:  jekyll
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
-theme: "just-the-docs"
+# theme: "just-the-docs"
+
+color_scheme: "dark"
 
 plugins:
   - jekyll-feed
