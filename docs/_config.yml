@@ -3,9 +3,10 @@ remote_theme: pmarsceill/just-the-docs
 color_scheme: nil
 
 description: Just a TEST
+baseurl: "/Implementation-of-svg" # the subpath of your site, e.g. /blog
+url: "https://github.com/Yule1988/Implementation-of-svg" # the base hostname & protocol for your site, e.g. http://example.com
 
 search_enabled: true
-
 
 
 # Enable or disable heading anchors
@@ -14,7 +15,7 @@ heading_anchors: true
 # Aux links for the upper right navigation
 aux_links:
   "Flasher tool on GitHub":
-    - "https://github.com/Yule1988/Implementation-of-svg"
+    - "//github.com/Yule1988/Implementation-of-svg"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
@@ -36,4 +37,9 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 back_to_top: true
 back_to_top_text: "Back to top"
 
-# footer_content: "Copyright &copy; 2017-2020 Simon Truber."
+# footer_content: "Copyright &copy; 2017-2020."
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
