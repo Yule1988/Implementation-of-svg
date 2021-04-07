@@ -4,7 +4,7 @@ color_scheme: nil
 
 description: Just a TEST
 baseurl: "/Implementation-of-svg" # the subpath of your site, e.g. /blog
-url: "https://github.com/Yule1988/Implementation-of-svg" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://yule1988.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 search_enabled: true
 
@@ -39,7 +39,7 @@ back_to_top_text: "Back to top"
 
 # footer_content: "Copyright &copy; 2017-2020."
 
-kramdown:
-  syntax_highlighter_opts:
-    block:
-      line_numbers: false
+# kramdown:
+#   syntax_highlighter_opts:
+#     block:
+#       line_numbers: false

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Example 3
+title: erase and iserase
 parent: Examples
 has_children: true
 nav_order: 3
 ---
-
-# Example 3
-
-LINK getting started svg
+<!-- ### **erase and iserase:** -->
+<p align="center"> 
+<img src="img/erase_iserase_Dark+lighter_100x30.svg" width="100%">
+</p>
