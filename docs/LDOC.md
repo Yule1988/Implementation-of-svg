@@ -8,6 +8,6 @@ has_toc: false
 ---
 Short description LDOC
 
-<span class="fs-5">
+<span class="fs-6">
 [Link to LDOC](http://example.com/){: .btn .btn-purple .mr-2 }
 </span>
