@@ -14,7 +14,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Flasher tool on GitHub":
+  "GitHub Project":
     - "//github.com/Yule1988/Implementation-of-svg"
 
 # Makes Aux links open in a new tab. Default is false

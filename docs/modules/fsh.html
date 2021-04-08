@@ -35,6 +35,10 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Class_Shell">Class Shell </a></li>
+<li><a href="#Support_Functions">Support Functions</a></li>
+<li><a href="#Linenoise_Functions">Linenoise Functions</a></li>
+<li><a href="#Callable_Functions_of_Run_Function">Callable-Functions of Run Function</a></li>
+<li><a href="#Auxiliary_Commands_of_List_Command">Auxiliary Commands of List Command</a></li>
 </ul>
 
 
@@ -63,9 +67,7 @@
         <li><strong>License</strong>:
 
 </li>
-        <li><strong>Author</strong>:
-
-</li>
+        <li><strong>Author</strong>: Christoph Thelen</li>
     </ul>
 
 
@@ -73,27 +75,18 @@
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#Shell:_init">Shell:_init ()</a></td>
-	<td class="summary">Initialize the Shell object.</td>
+	<td class="summary">Initialize an instance of Shell upon creation.</td>
 	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:run">Shell:run ()</a></td>
+	<td class="summary">Run the FlaSHer application.</td>
+	</tr>
+</table>
+<h2><a href="#Support_Functions">Support Functions</a></h2>
+<table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#Shell:__getNetxPath">Shell:__getNetxPath ()</a></td>
 	<td class="summary">Get the path of the Netx.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__getFolderEntries">Shell:__getFolderEntries (strFolder, strPrintPrefix, astrWords)</a></td>
-	<td class="summary">Get the folder entries.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__getFilenameWords">Shell:__getFilenameWords (strMatch)</a></td>
-	<td class="summary">Get all filename words of the directory.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell.__HelpTopics_templete">Shell.__HelpTopics_templete</a></td>
-	<td class="summary">A templete function as string.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_help">Shell:__run_help (tCmd)</a></td>
-	<td class="summary">Show the help of the given command.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Shell:__getBusUnitCs">Shell:__getBusUnitCs (strDevice)</a></td>
@@ -108,132 +101,141 @@
 	<td class="summary">Switch to a new device or stay with the current one.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_read">Shell:__run_read (tCmd)</a></td>
-	<td class="summary">_<em>run</em>read.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_verify">Shell:__run_verify (tCmd)</a></td>
-	<td class="summary">_<em>run</em>verify.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_write">Shell:__run_write (tCmd)</a></td>
-	<td class="summary">_<em>run</em>write.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_erase">Shell:__run_erase (tCmd)</a></td>
-	<td class="summary">_<em>run</em>erase.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_iserased">Shell:__run_iserased (tCmd)</a></td>
-	<td class="summary">_<em>run</em>iserased.</td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#Shell:__str2hex">Shell:__str2hex (strData)</a></td>
-	<td class="summary">__str2hex.</td>
+	<td class="summary">Return the input string as hex value.</td>
+	</tr>
+</table>
+<h2><a href="#Linenoise_Functions">Linenoise Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__getFolderEntries">Shell:__getFolderEntries (strFolder, strPrintPrefix, astrWords)</a></td>
+	<td class="summary">Get the folder entries.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_hash">Shell:__run_hash (tCmd)</a></td>
-	<td class="summary">_<em>run</em>hash.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_scan">Shell:__run_scan ()</a></td>
-	<td class="summary">_<em>run</em>scan.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_connect">Shell:__run_connect (tCmd)</a></td>
-	<td class="summary">_<em>run</em>connect.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_disconnect">Shell:__run_disconnect ()</a></td>
-	<td class="summary">_<em>run</em>disconnect.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_input">Shell:__run_input (tCmd)</a></td>
-	<td class="summary">_<em>run</em>input.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_debug">Shell:__run_debug (tCmd)</a></td>
-	<td class="summary">_<em>run</em>debug.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_replace">Shell:__list_replace (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">_<em>list</em>replace.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_exchange">Shell:__list_exchange (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">_<em>list</em>exchange.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_switch">Shell:__list_switch (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">_<em>list</em>switch.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_insert">Shell:__list_insert (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">_<em>list</em>insert.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_save">Shell:__list_save (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">_<em>list</em>save.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell.strFilename">Shell.strFilename</a></td>
-	<td class="summary">_<em>list</em>replace.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_load">Shell:__list_load (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">_<em>list</em>load.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_add">Shell:__list_add (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">add a specified list to the current list</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_run">Shell:__list_run (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">process the specified interval of the list and quit the list command</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_clear">Shell:__list_clear (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">clear the specified interval of the list</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_end">Shell:__list_end (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">quit the list command - save tListCmdsTemp to tListPreviousCmds - deactivate hints/words of auxiliary commands</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__list_abort">Shell:__list_abort (tListCmd, tListCmdsTemp)</a></td>
-	<td class="summary">quit the list command - save tListCmdsTemp to tListPreviousCmds - deactivate hints/words of auxiliary commands</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_list">Shell:__run_list (tCmd)</a></td>
-	<td class="summary">Description</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Shell:__run_quit">Shell:__run_quit ()</a></td>
-	<td class="summary">Description</td>
+	<td class="name" nowrap><a href="#Shell:__getFilenameWords">Shell:__getFilenameWords (strMatch)</a></td>
+	<td class="summary">Get all filename words of the directory.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Shell:__getCompletions">Shell:__getCompletions (tCompletions, strLine, astrWords, strMatch)</a></td>
-	<td class="summary">Description</td>
+	<td class="summary">Supporting function of __completer.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Shell:__getMatchingHints">Shell:__getMatchingHints (astrWords, strMatch)</a></td>
-	<td class="summary">Description</td>
+	<td class="summary">Supporting function of __hints.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Shell:__completer">Shell:__completer (tCompletions, strLine)</a></td>
-	<td class="summary">Description</td>
+	<td class="summary">Complete the user input by pressing of <TAB> key.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Shell:__hints">Shell:__hints (strLine)</a></td>
-	<td class="summary">Description</td>
+	<td class="summary">Provide hint information on the right hand side of the prompt.</td>
+	</tr>
+</table>
+<h2><a href="#Callable_Functions_of_Run_Function">Callable-Functions of Run Function</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_help">Shell:__run_help (tCmd)</a></td>
+	<td class="summary">Show the help of the given command.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Shell:run">Shell:run ()</a></td>
-	<td class="summary">Description</td>
+	<td class="name" nowrap><a href="#Shell:__run_read">Shell:__run_read (tCmd)</a></td>
+	<td class="summary">Read the data of the device at the specified address into the stated file.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Shell.astrPlugins">Shell.astrPlugins</a></td>
-	<td class="summary">Description</td>
+	<td class="name" nowrap><a href="#Shell:__run_verify">Shell:__run_verify (tCmd)</a></td>
+	<td class="summary">Verify whether the data of the stated file is written in the device at the given startaddress.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_write">Shell:__run_write (tCmd)</a></td>
+	<td class="summary">Write data of the stated file into the device at the specified startaddress.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_erase">Shell:__run_erase (tCmd)</a></td>
+	<td class="summary">Delete the data of the device at the specified address.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_iserased">Shell:__run_iserased (tCmd)</a></td>
+	<td class="summary">Verify whether the data is deleted of the device at the specified address.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_hash">Shell:__run_hash (tCmd)</a></td>
+	<td class="summary">Compute the SHA1 checksum of data at the specified address.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_scan">Shell:__run_scan ()</a></td>
+	<td class="summary">Search for devices and list all possibilities of plugins.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_connect">Shell:__run_connect (tCmd)</a></td>
+	<td class="summary">Establishe a connection with the plugin.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_disconnect">Shell:__run_disconnect ()</a></td>
+	<td class="summary">Disconnect from the plugin.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_input">Shell:__run_input (tCmd)</a></td>
+	<td class="summary">Read the specified input file and verify whether each line is a valid command.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_debug">Shell:__run_debug (tCmd)</a></td>
+	<td class="summary">Display or save all debug information.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_list">Shell:__run_list (tCmd)</a></td>
+	<td class="summary">The list command activates the list mode and supports the creation and editing of a list of commands.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__run_quit">Shell:__run_quit ()</a></td>
+	<td class="summary">Quit the application without a safety question.</td>
+	</tr>
+</table>
+<h2><a href="#Auxiliary_Commands_of_List_Command">Auxiliary Commands of List Command</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_replace">Shell:__list_replace (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Activate the replace command.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_exchange">Shell:__list_exchange (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Exchange the position of two commands.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_switch">Shell:__list_switch (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Switch the position of one command.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_insert">Shell:__list_insert (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Activate the insert command.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_save">Shell:__list_save (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Save the current list of commands to the given filename.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_load">Shell:__list_load (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Load a specified list and overwrite the current list of commands.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_add">Shell:__list_add (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Add a specified list to the current list of commands.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_run">Shell:__list_run (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Process the specified interval of the current list of commands and quit the list command.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_clear">Shell:__list_clear (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Clear the specified interval of the current list.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_end">Shell:__list_end (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Quit the list command and save the current list of commands to 'previous' list.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Shell:__list_abort">Shell:__list_abort (tListCmd, tListCmdsTemp)</a></td>
+	<td class="summary">Abort the commands replace and insert.</td>
 	</tr>
 </table>
 
@@ -241,18 +243,15 @@
 <br/>
 
 
-    <h2 class="section-header has-description"><a name="Class_Shell"></a>Class Shell </h2>
+    <h2 class="section-header "><a name="Class_Shell"></a>Class Shell </h2>
 
-          <div class="section-description">
-          Shell class.
-          </div>
     <dl class="function">
     <dt>
     <a name = "Shell:_init"></a>
     <strong>Shell:_init ()</strong>
     </dt>
     <dd>
-    Initialize the Shell object.
+    Initialize an instance of Shell upon creation.
 
 
 
@@ -261,6 +260,24 @@
 
 
 </dd>
+    <dt>
+    <a name = "Shell:run"></a>
+    <strong>Shell:run ()</strong>
+    </dt>
+    <dd>
+    Run the FlaSHer application.
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Support_Functions"></a>Support Functions</h2>
+
+    <dl class="function">
     <dt>
     <a name = "Shell:__getNetxPath"></a>
     <strong>Shell:__getNetxPath ()</strong>
@@ -275,98 +292,6 @@
 
         strPathNetx: the directory of the NetX
     </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__getFolderEntries"></a>
-    <strong>Shell:__getFolderEntries (strFolder, strPrintPrefix, astrWords)</strong>
-    </dt>
-    <dd>
-    Get the folder entries.
- Supports the function __getFilenameWords.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">strFolder</span>
-         directory
-        </li>
-        <li><span class="parameter">strPrintPrefix</span>
-         prefix of folder
-        </li>
-        <li><span class="parameter">astrWords</span>
-         table of all words in the directory
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__getFilenameWords"></a>
-    <strong>Shell:__getFilenameWords (strMatch)</strong>
-    </dt>
-    <dd>
-    Get all filename words of the directory.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">strMatch</span>
-         entered directory plus unfinished filename/folder
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        astrWords: table of all filename words in the directory
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell.__HelpTopics_templete"></a>
-    <strong>Shell.__HelpTopics_templete</strong>
-    </dt>
-    <dd>
-    A templete function as string.  The text size of a block is set to 80 chars.
-
-
-    <h3>Fields:</h3>
-    <ul>
-        <li><span class="parameter">text</span>
-         templete of the _<em>run</em>help function
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_help"></a>
-    <strong>Shell:__run_help (tCmd)</strong>
-    </dt>
-    <dd>
-    Show the help of the given command.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-         table of commands
-        </li>
-    </ul>
-
 
 
 
@@ -394,7 +319,7 @@
         <li>
         ucUnit: number of unit</li>
         <li>
-        ucCS: number of CS</li>
+        ucCS: number of CS (ChipSelect)</li>
     </ol>
 
 
@@ -406,7 +331,7 @@
     <strong>Shell:__getRange (tCmd)</strong>
     </dt>
     <dd>
-    Determine the startaddress and length of data. <br/>
+    Determine the startaddress and length of data.
  In addition, it verifies whether the values of startaddress, length and endadress are within the range of the device
 
 
@@ -446,7 +371,7 @@
          number of unit
         </li>
         <li><span class="parameter">ucCS</span>
-         number of cs
+         number of CS (ChipSelect)
         </li>
     </ul>
 
@@ -461,594 +386,89 @@
 
 </dd>
     <dt>
-    <a name = "Shell:__run_read"></a>
-    <strong>Shell:__run_read (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>read.  Some description
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_verify"></a>
-    <strong>Shell:__run_verify (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>verify.  Some description
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_write"></a>
-    <strong>Shell:__run_write (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>write.  Some description
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_erase"></a>
-    <strong>Shell:__run_erase (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>erase.  Some description
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_iserased"></a>
-    <strong>Shell:__run_iserased (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>iserased.  Some description
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
     <a name = "Shell:__str2hex"></a>
     <strong>Shell:__str2hex (strData)</strong>
     </dt>
     <dd>
-    __str2hex.  Return the input String as Hex value
+    Return the input string as hex value.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">strData</span>
-            <span class="types"><span class="type">one of the magic characters</span></span>
-         '.' represents any single character
+         input string
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        string as hex value
+    </ol>
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/fsh.html#Shell:__run_hash">__run_hash</a>
+    </ul>
 
 
 </dd>
+</dl>
+    <h2 class="section-header "><a name="Linenoise_Functions"></a>Linenoise Functions</h2>
+
+    <dl class="function">
     <dt>
-    <a name = "Shell:__run_hash"></a>
-    <strong>Shell:__run_hash (tCmd)</strong>
+    <a name = "Shell:__getFolderEntries"></a>
+    <strong>Shell:__getFolderEntries (strFolder, strPrintPrefix, astrWords)</strong>
     </dt>
     <dd>
-    _<em>run</em>hash.  Some description
+    Get the folder entries.
+ It supports the function __getFilenameWords.
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
+        <li><span class="parameter">strFolder</span>
+         directory
+        </li>
+        <li><span class="parameter">strPrintPrefix</span>
+         prefix of folder
+        </li>
+        <li><span class="parameter">astrWords</span>
+         table of all words in the directory
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/fsh.html#Shell:__getFilenameWords">__getFilenameWords</a>
+    </ul>
 
 
 </dd>
     <dt>
-    <a name = "Shell:__run_scan"></a>
-    <strong>Shell:__run_scan ()</strong>
+    <a name = "Shell:__getFilenameWords"></a>
+    <strong>Shell:__getFilenameWords (strMatch)</strong>
     </dt>
     <dd>
-    _<em>run</em>scan.  Some description
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_connect"></a>
-    <strong>Shell:__run_connect (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>connect.  Some description
+    Get all filename words of the directory.
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
+        <li><span class="parameter">strMatch</span>
+         entered directory plus unfinished filename/folder
         </li>
     </ul>
 
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_disconnect"></a>
-    <strong>Shell:__run_disconnect ()</strong>
-    </dt>
-    <dd>
-    _<em>run</em>disconnect.  Some description
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_input"></a>
-    <strong>Shell:__run_input (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>input.  reads the specified input file and verify whether each line is a valid command
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_debug"></a>
-    <strong>Shell:__run_debug (tCmd)</strong>
-    </dt>
-    <dd>
-    _<em>run</em>debug.  display or save all debug information
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_replace"></a>
-    <strong>Shell:__list_replace (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    _<em>list</em>replace.  activate the replace command - the subsequent command replaces a command at the specified position
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_exchange"></a>
-    <strong>Shell:__list_exchange (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    _<em>list</em>exchange.  exchange the position of two commands
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_switch"></a>
-    <strong>Shell:__list_switch (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    _<em>list</em>switch.  switch the position of one command
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_insert"></a>
-    <strong>Shell:__list_insert (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    _<em>list</em>insert.  activate the insert command - the subsequent command is insert at the specified position
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_save"></a>
-    <strong>Shell:__list_save (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    _<em>list</em>save.  save the current list to the given filename
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell.strFilename"></a>
-    <strong>Shell.strFilename</strong>
-    </dt>
-    <dd>
-    _<em>list</em>replace.  save the list to the given filename
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_load"></a>
-    <strong>Shell:__list_load (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    _<em>list</em>load.  load a specified list - overwrite the current list
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_add"></a>
-    <strong>Shell:__list_add (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    add a specified list to the current list
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_run"></a>
-    <strong>Shell:__list_run (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    process the specified interval of the list and quit the list command
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_clear"></a>
-    <strong>Shell:__list_clear (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    clear the specified interval of the list
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_end"></a>
-    <strong>Shell:__list_end (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    quit the list command - save tListCmdsTemp to tListPreviousCmds - deactivate hints/words of auxiliary commands
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__list_abort"></a>
-    <strong>Shell:__list_abort (tListCmd, tListCmdsTemp)</strong>
-    </dt>
-    <dd>
-    quit the list command - save tListCmdsTemp to tListPreviousCmds - deactivate hints/words of auxiliary commands
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tListCmd</span>
-
-
-
-        </li>
-        <li><span class="parameter">tListCmdsTemp</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_list"></a>
-    <strong>Shell:__run_list (tCmd)</strong>
-    </dt>
-    <dd>
-    Description
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">tCmd</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell:__run_quit"></a>
-    <strong>Shell:__run_quit ()</strong>
-    </dt>
-    <dd>
-    Description
-
-
-
+    <h3>Returns:</h3>
+    <ol>
+
+        astrWords: table of all filename words in the directory
+    </ol>
 
 
 
@@ -1059,7 +479,7 @@
     <strong>Shell:__getCompletions (tCompletions, strLine, astrWords, strMatch)</strong>
     </dt>
     <dd>
-    Description
+    Supporting function of __completer.
 
 
     <h3>Parameters:</h3>
@@ -1070,9 +490,7 @@
 
         </li>
         <li><span class="parameter">strLine</span>
-
-
-
+         given string of the line
         </li>
         <li><span class="parameter">astrWords</span>
 
@@ -1088,6 +506,10 @@
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/fsh.html#Shell:__completer">__completer</a>
+    </ul>
 
 
 </dd>
@@ -1096,7 +518,7 @@
     <strong>Shell:__getMatchingHints (astrWords, strMatch)</strong>
     </dt>
     <dd>
-    Description
+    Supporting function of __hints.
 
 
     <h3>Parameters:</h3>
@@ -1113,8 +535,17 @@
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        strHint: string with hint information
+    </ol>
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/fsh.html#Shell:__hints">__hints</a>
+    </ul>
 
 
 </dd>
@@ -1123,7 +554,7 @@
     <strong>Shell:__completer (tCompletions, strLine)</strong>
     </dt>
     <dd>
-    Description
+    Complete the user input by pressing of <TAB> key.
 
 
     <h3>Parameters:</h3>
@@ -1134,9 +565,7 @@
 
         </li>
         <li><span class="parameter">strLine</span>
-
-
-
+         given string of the line
         </li>
     </ul>
 
@@ -1150,69 +579,559 @@
     <strong>Shell:__hints (strLine)</strong>
     </dt>
     <dd>
-    Description
+    Provide hint information on the right hand side of the prompt.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">strLine</span>
-
-
-
+         given string of the line
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        strHint: string with hint information
+    </ol>
 
 
 
 
 </dd>
+</dl>
+    <h2 class="section-header "><a name="Callable_Functions_of_Run_Function"></a>Callable-Functions of Run Function</h2>
+
+    <dl class="function">
     <dt>
-    <a name = "Shell:run"></a>
-    <strong>Shell:run ()</strong>
+    <a name = "Shell:__run_help"></a>
+    <strong>Shell:__run_help (tCmd)</strong>
     </dt>
     <dd>
-    Description
+    Show the help of the given command.
 
 
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Shell.astrPlugins"></a>
-    <strong>Shell.astrPlugins</strong>
-    </dt>
-    <dd>
-    Description
-
-
-    <h3>Fields:</h3>
+    <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">romloader_eth</span>
-
-
-
-        </li>
-        <li><span class="parameter">romloader_usb</span>
-
-
-
-        </li>
-        <li><span class="parameter">romloader_uart</span>
-
-
-
-        </li>
-        <li><span class="parameter">romloader_jtag</span>
-
-
-
+        <li><span class="parameter">tCmd</span>
+         table of commands
         </li>
     </ul>
 
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_read"></a>
+    <strong>Shell:__run_read (tCmd)</strong>
+    </dt>
+    <dd>
+    Read the data of the device at the specified address into the stated file.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_verify"></a>
+    <strong>Shell:__run_verify (tCmd)</strong>
+    </dt>
+    <dd>
+    Verify whether the data of the stated file is written in the device at the given startaddress.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_write"></a>
+    <strong>Shell:__run_write (tCmd)</strong>
+    </dt>
+    <dd>
+    Write data of the stated file into the device at the specified startaddress.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_erase"></a>
+    <strong>Shell:__run_erase (tCmd)</strong>
+    </dt>
+    <dd>
+    Delete the data of the device at the specified address.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_iserased"></a>
+    <strong>Shell:__run_iserased (tCmd)</strong>
+    </dt>
+    <dd>
+    Verify whether the data is deleted of the device at the specified address.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_hash"></a>
+    <strong>Shell:__run_hash (tCmd)</strong>
+    </dt>
+    <dd>
+    Compute the SHA1 checksum of data at the specified address.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_scan"></a>
+    <strong>Shell:__run_scan ()</strong>
+    </dt>
+    <dd>
+    Search for devices and list all possibilities of plugins.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_connect"></a>
+    <strong>Shell:__run_connect (tCmd)</strong>
+    </dt>
+    <dd>
+    Establishe a connection with the plugin.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_disconnect"></a>
+    <strong>Shell:__run_disconnect ()</strong>
+    </dt>
+    <dd>
+    Disconnect from the plugin.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_input"></a>
+    <strong>Shell:__run_input (tCmd)</strong>
+    </dt>
+    <dd>
+    Read the specified input file and verify whether each line is a valid command.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_debug"></a>
+    <strong>Shell:__run_debug (tCmd)</strong>
+    </dt>
+    <dd>
+    Display or save all debug information.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_list"></a>
+    <strong>Shell:__run_list (tCmd)</strong>
+    </dt>
+    <dd>
+    The list command activates the list mode and supports the creation and editing of a list of commands.  It can process a list of commands directly through the help of the listed auxiliary commands. Particularly noteworthy is the editing of the 'hist' and 'previous' lists. The list 'hist' contains all processed past commands and the list 'previous' is the saved list of the last editing. ATTENTION: to get access to the hints of possible plugins, a connection to the device is necessary.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tCmd</span>
+         table of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__run_quit"></a>
+    <strong>Shell:__run_quit ()</strong>
+    </dt>
+    <dd>
+    Quit the application without a safety question.  A connection to a netx is closed.
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Auxiliary_Commands_of_List_Command"></a>Auxiliary Commands of List Command</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Shell:__list_replace"></a>
+    <strong>Shell:__list_replace (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Activate the replace command.  The subsequent command replaces a command at the specified position.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        tResult: error message and specified position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_exchange"></a>
+    <strong>Shell:__list_exchange (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Exchange the position of two commands.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_switch"></a>
+    <strong>Shell:__list_switch (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Switch the position of one command.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_insert"></a>
+    <strong>Shell:__list_insert (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Activate the insert command.  The subsequent command is insert at the specified position.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        tResult: error message and specified position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_save"></a>
+    <strong>Shell:__list_save (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Save the current list of commands to the given filename.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_load"></a>
+    <strong>Shell:__list_load (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Load a specified list and overwrite the current list of commands.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_add"></a>
+    <strong>Shell:__list_add (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Add a specified list to the current list of commands.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_run"></a>
+    <strong>Shell:__list_run (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Process the specified interval of the current list of commands and quit the list command.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_clear"></a>
+    <strong>Shell:__list_clear (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Clear the specified interval of the current list.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_end"></a>
+    <strong>Shell:__list_end (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Quit the list command and save the current list of commands to 'previous' list.  The end command is also possible during replace and insert are active. Additonally, deactivate hints/words of auxiliary commands.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Shell:__list_abort"></a>
+    <strong>Shell:__list_abort (tListCmd, tListCmdsTemp)</strong>
+    </dt>
+    <dd>
+    Abort the commands replace and insert.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tListCmd</span>
+         table of commands
+        </li>
+        <li><span class="parameter">tListCmdsTemp</span>
+         current list of commands
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        tResult: error message and abort command
+    </ol>
 
 
 

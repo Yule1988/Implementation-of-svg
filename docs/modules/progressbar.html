@@ -50,7 +50,7 @@
 <div id="content">
 
 <h1>Module <code>progressbar</code></h1>
-<p>progressbar</p>
+<p>Support the display of progress information.</p>
 <p>
 
 </p>
@@ -65,9 +65,7 @@
         <li><strong>License</strong>:
 
 </li>
-        <li><strong>Author</strong>:
-
-</li>
+        <li><strong>Author</strong>: Simon Truber</li>
     </ul>
 
 
@@ -75,23 +73,27 @@
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#ProgressBar:_init">ProgressBar:_init (tLog, tparam)</a></td>
-	<td class="summary">description.</td>
+	<td class="summary">Initialize an instance of ProgressBar upon creation.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ProgressBar.default_tparam">ProgressBar.default_tparam</a></td>
+	<td class="summary">Default paramter table of the progress bar.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#ProgressBar:__UpdateParam">ProgressBar:__UpdateParam (tparam)</a></td>
-	<td class="summary">update the table of parameters of the progress bar</td>
+	<td class="summary">Update the table of parameters of the progress bar.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#ProgressBar:__getSizeProgressBar">ProgressBar:__getSizeProgressBar (ulMax)</a></td>
-	<td class="summary">determine the size of the progress bar depending on the total size of a progress bar</td>
+	<td class="summary">Determine the size of the progress bar depending on default size of the term.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#ProgressBar:__ProgressBar_callback_progress">ProgressBar:__ProgressBar_callback_progress (ulCnt, ulMax)</a></td>
-	<td class="summary">construct and display the progress bar as callback function</td>
+	<td class="summary">Construct and display the progress bar as callback function.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#ProgressBar:__ProgressBar_callback_message">ProgressBar:__ProgressBar_callback_message (a, b)</a></td>
-	<td class="summary">the callback message function of the netx - either a string or a progress bar</td>
+	<td class="summary">The callback message function of the netx - either a string or progress bar information</td>
 	</tr>
 </table>
 
@@ -110,20 +112,77 @@
     <strong>ProgressBar:_init (tLog, tparam)</strong>
     </dt>
     <dd>
-    description.
+    Initialize an instance of ProgressBar upon creation.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">tLog</span>
-
-
-
+         initial logger object
         </li>
         <li><span class="parameter">tparam</span>
+         initial parameter table of the progress bar
+        </li>
+    </ul>
 
 
 
+
+
+</dd>
+    <dt>
+    <a name = "ProgressBar.default_tparam"></a>
+    <strong>ProgressBar.default_tparam</strong>
+    </dt>
+    <dd>
+    Default paramter table of the progress bar.
+
+
+    <ul>
+        <li><span class="parameter">mode</span>
+         nil or 'debug' (default: nil)
+        </li>
+        <li><span class="parameter">decimals</span>
+         decimal places percent (default: 1)
+        </li>
+        <li><span class="parameter">fill</span>
+         (default: "█")
+        </li>
+        <li><span class="parameter">prefix</span>
+         (default: "Progress:")
+        </li>
+        <li><span class="parameter">suffix</span>
+         (default: "Complete:")
+        </li>
+        <li><span class="parameter">length</span>
+         of progress bar (default: 50)
+        </li>
+        <li><span class="parameter">printEnd</span>
+         final print (default: "\n")
+        </li>
+        <li><span class="parameter">ProgressBarFinished</span>
+         (default: false)
+        </li>
+        <li><span class="parameter">printLine</span>
+         at the end of each process step (default: "")
+        </li>
+        <li><span class="parameter">ProcessAlgo</span>
+          "Simple" or "SingleLine" or "UnequalByteSingleLine" (default: "Simple")
+        </li>
+        <li><span class="parameter">totalByteSize</span>
+         for UnequalByteSingleLine algorithm (default: 1)
+        </li>
+        <li><span class="parameter">SL_Iteration</span>
+         for SingleLine algorithm (default: 1)
+        </li>
+        <li><span class="parameter">SL_Total</span>
+         for SingleLine algorithm (default: 1)
+        </li>
+        <li><span class="parameter">repeatProgress</span>
+         repeat the progress bar (default: false)
+        </li>
+        <li><span class="parameter">showTotalProgress</span>
+         total progress after prefix symbol (default: false)
         </li>
     </ul>
 
@@ -137,18 +196,21 @@
     <strong>ProgressBar:__UpdateParam (tparam)</strong>
     </dt>
     <dd>
-    update the table of parameters of the progress bar
+    Update the table of parameters of the progress bar.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">tparam</span>
-
-
-
+         table of parameter of the progress bar
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        the object of the progress bar with the updated parameters
+    </ol>
 
 
 
@@ -159,15 +221,13 @@
     <strong>ProgressBar:__getSizeProgressBar (ulMax)</strong>
     </dt>
     <dd>
-    determine the size of the progress bar depending on the total size of a progress bar
+    Determine the size of the progress bar depending on default size of the term.  The default size of the term is set to 80.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">ulMax</span>
-
-
-
+         maximum value - total number of bytes
         </li>
     </ul>
 
@@ -181,20 +241,23 @@
     <strong>ProgressBar:__ProgressBar_callback_progress (ulCnt, ulMax)</strong>
     </dt>
     <dd>
-    construct and display the progress bar as callback function
+    Construct and display the progress bar as callback function.
+ Different algorithm can be used: "Simple", "SingleLine" or "UnequalByteSingleLine"</p>
+
+<p> "Simple": a total progress bar for one event.</p>
+
+<p> "SingleLine": multiple events (SL<em>Total) in one progress bar. The starting iteration is SL</em>Iteration.</p>
+
+<p> "UnequalByteSingleLine": multiple events with different known byte size (sum = totalByteSize) in one progress bar.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">ulCnt</span>
-
-
-
+         counter value - number of processed bytes
         </li>
         <li><span class="parameter">ulMax</span>
-
-
-
+         maximum value - total number of bytes
         </li>
     </ul>
 
@@ -208,20 +271,16 @@
     <strong>ProgressBar:__ProgressBar_callback_message (a, b)</strong>
     </dt>
     <dd>
-    the callback message function of the netx - either a string or a progress bar
+    The callback message function of the netx - either a string or progress bar information
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">a</span>
-
-
-
+         return value/string of NetX
         </li>
         <li><span class="parameter">b</span>
-
-
-
+         return value/string of NetX
         </li>
     </ul>
 
