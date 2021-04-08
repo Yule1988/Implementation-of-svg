@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>FlaSH, the flasher shell docs</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>FlaSH, the flasher shell</h1>
+
+<ul>
+  <li><a href="https://yule1988.github.io/Implementation-of-svg/">HOME</a></li>
+  <li><a href="https://github.com/Yule1988/Implementation-of-svg">GitHub Project</a></li>
+  <li><a href="../index.html">Documentation</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/fsh.html">fsh</a></li>
+  <li><a href="../modules/progressbar.html">progressbar</a></li>
+  <li><strong>flasher</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>flasher</code></h1>
+<p>The FlaSHer application.</p>
+<p> A helpful tool to write, verify, read and erase data in flash.</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>:
+
+</li>
+        <li><strong>Release</strong>:
+
+</li>
+        <li><strong>License</strong>:
+
+</li>
+        <li><strong>Author</strong>:
+
+</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Flasher:getBoardInfo">Flasher:getBoardInfo (tPlugin, aAttr, fnCallbackMessage, fnCallbackProgress)</a></td>
+	<td class="summary">Detecting flash and getting device info</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Flasher:eraseArea">Flasher:eraseArea (tPlugin, aAttr, ulDeviceOffset, ulSize, fnCallbackMessage, fnCallbackProgress)</a></td>
+	<td class="summary">erase an area:
+ check if the area is already erased and erase only if it isn't empty.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Flasher:hashArea">Flasher:hashArea (tPlugin, aAttr, ulDeviceOffset, ulDataByteSize, fnCallbackMessage, fnCallbackProgress)</a></td>
+	<td class="summary">Calculate the SHA1 hash of an area of an area in the flash.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Flasher:simple_flasher_string">Flasher:simple_flasher_string (tPlugin, strData, tBus, ulUnit, ulChipSelect, strFlasherPrefix, fnCallbackProgress, fnCallbackMessage)</a></td>
+	<td class="summary">simple<em>flasher</em>string
+ This is a simple routine to flash the data in a string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Flasher:simple_flasher">Flasher:simple_flasher (tPlugin, strDataFileName, tBus, ulUnit, ulChipSelect, strFlasherPrefix, fnCallbackProgress, fnCallbackMessage)</a></td>
+	<td class="summary">simple_flasher
+ This is a simple routine to flash one file.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Flasher:sdi_init">Flasher:sdi_init (tPlugin, aAttr, ulUnit, ulChipSelect, ulSpeed_kHz, fnCallbackProgress, fnCallbackMessage)</a></td>
+	<td class="summary">SPI debug interface</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#self.BUS_Parflash">self.BUS_Parflash</a></td>
+	<td class="summary">Definitions</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Flasher:getBoardInfo"></a>
+    <strong>Flasher:getBoardInfo (tPlugin, aAttr, fnCallbackMessage, fnCallbackProgress)</strong>
+    </dt>
+    <dd>
+    Detecting flash and getting device info
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tPlugin</span>
+
+
+
+        </li>
+        <li><span class="parameter">aAttr</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackMessage</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackProgress</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Flasher:eraseArea"></a>
+    <strong>Flasher:eraseArea (tPlugin, aAttr, ulDeviceOffset, ulSize, fnCallbackMessage, fnCallbackProgress)</strong>
+    </dt>
+    <dd>
+    erase an area:
+ check if the area is already erased and erase only if it isn't empty.
+ ulSize = 0xffffffff to erase from ulDeviceOffset to end of chip</p>
+
+<p> OK:
+ The area is empty, no erase necessary.
+ Area erased</p>
+
+<p> Error messages:
+ getEraseArea failed!
+ Failed to check if the area is erased!
+ getEraseArea failed!
+ Failed to erase the area! (Failure during erase)
+ Failed to erase the area! (isErased check failed)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tPlugin</span>
+
+
+
+        </li>
+        <li><span class="parameter">aAttr</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulDeviceOffset</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulSize</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackMessage</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackProgress</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Flasher:hashArea"></a>
+    <strong>Flasher:hashArea (tPlugin, aAttr, ulDeviceOffset, ulDataByteSize, fnCallbackMessage, fnCallbackProgress)</strong>
+    </dt>
+    <dd>
+    Calculate the SHA1 hash of an area of an area in the flash.
+ size = 0xffffffff to read from ulDeviceOffset to end of device</p>
+
+<p> Returns the hash as a binary string or nil and an error message.</p>
+
+<p> Ok:
+ "Checksum calculated."</p>
+
+<p> Error messages:
+ Could not determine the flash size!
+ "Error while calculating SHA1 hash"
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tPlugin</span>
+
+
+
+        </li>
+        <li><span class="parameter">aAttr</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulDeviceOffset</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulDataByteSize</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackMessage</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackProgress</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Flasher:simple_flasher_string"></a>
+    <strong>Flasher:simple_flasher_string (tPlugin, strData, tBus, ulUnit, ulChipSelect, strFlasherPrefix, fnCallbackProgress, fnCallbackMessage)</strong>
+    </dt>
+    <dd>
+    simple<em>flasher</em>string
+ This is a simple routine to flash the data in a string.
+ Load file from strDataFileName and write it to offset 0
+ Raise an error in case of any errors</p>
+
+<p>   tPlugin
+   strDataFileName</p>
+
+<p>   tBus
+   ulUnit
+   ulChipSelect</p>
+
+<p>   strFlasherPrefix
+   fnCallbackProgress
+   fnCallbackMessage
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tPlugin</span>
+
+
+
+        </li>
+        <li><span class="parameter">strData</span>
+
+
+
+        </li>
+        <li><span class="parameter">tBus</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulUnit</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulChipSelect</span>
+
+
+
+        </li>
+        <li><span class="parameter">strFlasherPrefix</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackProgress</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackMessage</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Flasher:simple_flasher"></a>
+    <strong>Flasher:simple_flasher (tPlugin, strDataFileName, tBus, ulUnit, ulChipSelect, strFlasherPrefix, fnCallbackProgress, fnCallbackMessage)</strong>
+    </dt>
+    <dd>
+    simple_flasher
+ This is a simple routine to flash one file.
+ Load file from strDataFileName and write it to offset 0
+ Raise an error in case of any errors</p>
+
+<p>   tPlugin
+   strDataFileName</p>
+
+<p>   tBus
+   ulUnit
+   ulChipSelect</p>
+
+<p>   strFlasherPrefix
+   fnCallbackProgress
+   fnCallbackMessage
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tPlugin</span>
+
+
+
+        </li>
+        <li><span class="parameter">strDataFileName</span>
+
+
+
+        </li>
+        <li><span class="parameter">tBus</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulUnit</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulChipSelect</span>
+
+
+
+        </li>
+        <li><span class="parameter">strFlasherPrefix</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackProgress</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackMessage</span>
+        Load the data.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Flasher:sdi_init"></a>
+    <strong>Flasher:sdi_init (tPlugin, aAttr, ulUnit, ulChipSelect, ulSpeed_kHz, fnCallbackProgress, fnCallbackMessage)</strong>
+    </dt>
+    <dd>
+    SPI debug interface
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tPlugin</span>
+
+
+
+        </li>
+        <li><span class="parameter">aAttr</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulUnit</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulChipSelect</span>
+
+
+
+        </li>
+        <li><span class="parameter">ulSpeed_kHz</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackProgress</span>
+
+
+
+        </li>
+        <li><span class="parameter">fnCallbackMessage</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "self.BUS_Parflash"></a>
+    <strong>self.BUS_Parflash</strong>
+    </dt>
+    <dd>
+    Definitions
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
