@@ -9,5 +9,5 @@ has_toc: false
 <!-- # Example getting started
 {: .no_toc } -->
 <p align="center"> 
-<img src="img/getting_started_Dark+lighter_100x30.svg" width="100%">
+<img src="img/getting_started_Dark+lighter_100x30.svg" width="90%">
 </p>

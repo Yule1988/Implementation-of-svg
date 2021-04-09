@@ -8,5 +8,5 @@ has_toc: false
 ---
 <!-- ### **list command:** -->
 <p align="center"> 
-<img src="img/list_Dark+lighter_100x30.svg" width="100%">
+<img src="img/list_Dark+lighter_100x30.svg" width="90%">
 </p>

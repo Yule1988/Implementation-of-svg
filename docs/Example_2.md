@@ -10,5 +10,5 @@ has_toc: false
 <!-- > write, verify, read and hash data -->
 <!-- right,left -->
 <p align="center"> 
-<img src="img/write_verify_read_hash_Dark+lighter_100x30.svg" width="100%">
+<img src="img/write_verify_read_hash_Dark+lighter_100x30.svg" width="90%">
 </p>

@@ -8,5 +8,5 @@ has_toc: false
 ---
 <!-- ### **input command:** -->
 <p align="center"> 
-<img src="img/input_Dark+lighter_100x30.svg" width="100%">
+<img src="img/input_Dark+lighter_100x30.svg" width="90%">
 </p>
