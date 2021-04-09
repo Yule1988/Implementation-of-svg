@@ -6,6 +6,9 @@ description: Just a TEST
 baseurl: "/Implementation-of-svg" # the subpath of your site, e.g. /blog
 url: "https://yule1988.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
+logo: "/assets/images/muhku.svg"
+
+
 search_enabled: true
 
 
@@ -43,3 +46,12 @@ back_to_top_text: "Back to top"
 #   syntax_highlighter_opts:
 #     block:
 #       line_numbers: false
+
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
