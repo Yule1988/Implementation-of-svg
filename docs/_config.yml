@@ -6,7 +6,7 @@ description: Just a TEST
 baseurl: "/Implementation-of-svg" # the subpath of your site, e.g. /blog
 url: "https://yule1988.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-logo: "/assets/images/muhku.svg"
+logo: "/assets/images/icon_muhku.svg"
 
 
 search_enabled: true
