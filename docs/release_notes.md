@@ -16,6 +16,7 @@ The release notes of the flasher shell.
 1. TOC
 {:toc}
 
+---
 
 ## Release Notes 1.6.8
 
