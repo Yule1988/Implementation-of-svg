@@ -1,8 +1,8 @@
-title: "FlaSH, the flasher shell"
+title: "FlaSH, the flasher Shell"
 remote_theme: pmarsceill/just-the-docs
 color_scheme: nil
 
-description: Just a TEST
+description: 
 baseurl: "/Implementation-of-svg" # the subpath of your site, e.g. /blog
 url: "https://yule1988.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
