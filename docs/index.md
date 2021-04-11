@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Flash, the flasher Shell
+title: FlaSH, the flasher Shell
 nav_order: 1
 description: ""
 permalink: /
